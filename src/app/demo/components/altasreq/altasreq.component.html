@@ -1,0 +1,61 @@
+<div align = "center">
+    <h1>Alta Requisicion</h1>
+</div>
+
+<div class="card" >
+<form [formGroup] = 'altaReq' (ngSubmit) = 'reqSubmit()'>
+    <div class="formgrid grid">
+        <div class="field col-12 md:col-3">
+            <strong><label for="ejercicio">Ejercicio:</label></strong>
+            <input id="ejercicio" formControlName = 'ejercicio' type="text" class="text-base text-color surface-400 p-2 border-1 border-solid surface-border border-round appearance-none  outline-none w-full" readonly>
+        </div>
+        <div class="field col-12 md:col-3">
+           <strong><label for="folio">Folio:</label></strong> 
+            <input id="folio" formControlName = 'folio' type="text" class="text-base text-color surface-400 p-2 border-1 border-solid surface-border border-round appearance-none outline-none w-full" readonly >
+        </div>
+        <div class="field col-12 md:col-3">
+            <strong><label for="fechaCap">Fecha Captura:</label></strong>
+            <input id="fechaCap" formControlName = 'fechaCap' type="text" class="text-base text-color surface-400 p-2 border-1 border-solid surface-border border-round appearance-none  outline-none w-full" readonly >
+        </div>
+        <div class="field col-12 md:col-3">
+           <strong><label for="estatus">Estatus:</label></strong> 
+            <input id="estatus" formControlName = 'estatus'type="text" class="text-base text-color surface-400 p-2 border-1 border-solid surface-border border-round appearance-none  outline-none w-full" readonly >
+        </div>
+        
+        <div class="field col-12 md:col-6">
+           <strong> <label for="usuarioCap">Usuario Captura</label></strong>
+            <input id="usuarioCap" formControlName = 'usuarioCap' type="text" class="text-base text-color surface-400 p-2 border-1 border-solid surface-border border-round appearance-none  outline-none w-full" readonly>
+        </div>
+        <div class="field col-12 md:col-3">
+           <strong><label for="departamento">Departamento:</label></strong>
+            <select id="departamento" formControlName ='departamento' class="w-full text-base text-color surface-400 p-2 border-1 border-solid surface-border border-round  focus:border-primary" style="appearance: auto" (change) = 'selectCC()'>
+                <option value = '0'>TGS</option>
+                <option value = '1'>CLEAN CAR</option>
+                <option value = '2'>PN SENDEROS</option>
+                <option value = '3'>PN GOMEZ</option>
+            </select>
+        </div>
+        <div class="field col-12 md:col-3">
+           <strong><label for="CC">Centro de Costos:</label></strong> 
+           <select id="CC" formControlName = 'CC' class="w-full text-base text-color surface-400 p-2 border-1 border-solid surface-border border-round  focus:border-primary" style="appearance: auto" >
+            <option value= "0">TGS</option>
+            <option value = '1'>CLEAN CAR</option>
+            <option value = '2'>PN SENDEROS</option>
+            <option value = '3'>PN GOMEZ</option>
+        </select>
+        </div>
+        <div class="field col-12">
+            <strong><label for="detalle">Detalle</label></strong>
+            <textarea id="detalle" formControlName = 'detalle' type="text" rows="4" class=" shadow-8 text-base text-color surface-400 p-2 border-1 border-solid surface-border border-round appearance-none  focus:border-primary w-full"></textarea>
+        </div>
+        <div class="field col-12" *ngIf = "altaReq.get('detalle')?.touched && altaReq.get('detalle')?.errors?.['required']" class="alert alert-danger">
+            El detalle es requerido
+          </div>
+        <div class="field col-6 col-offset-5">
+            <button pButton class="p-button-lg" type="submit" label="Guardar" [disabled] = altaReq.invalid ></button>
+        </div>
+    </div>
+</form>
+
+    <!-- <img src="assets/demo/images/banner.jpg" alt="savir logo" class=" w-full flex-shrink-0 border-round">     -->
+</div>

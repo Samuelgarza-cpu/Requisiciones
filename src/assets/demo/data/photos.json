@@ -1,0 +1,22 @@
+{
+    "data":[
+        {
+            "itemImageSrc": "assets/demo/images/galleria/1.png",
+            "thumbnailImageSrc": "assets/demo/images/galleria/1.png",
+            "alt": "Paso del Norte",
+            "title": "Paso del Norte"
+        },
+        {
+            "itemImageSrc": "assets/demo/images/galleria/2.png",
+            "thumbnailImageSrc": "assets/demo/images/galleria/2.png",
+            "alt": "Clean Car",
+            "title": "Clean Car"
+        },
+        {
+            "itemImageSrc": "assets/demo/images/galleria/3.png",
+            "thumbnailImageSrc": "assets/demo/images/galleria/3.png",
+            "alt": "TGS",
+            "title": "TGS"
+        }
+    ]
+}

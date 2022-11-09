@@ -1,0 +1,36 @@
+<p-table [value]="requisicion[0]" responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Folio</th>
+            <th>Opciones</th>
+            <th>Departamento</th>
+            <th>Solicitante</th>
+            <th>Fecha_Cap</th>
+            <th>Status</th>
+            <th>Detalle</th>
+            <th>Usuario</th>
+          
+        
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-req>
+        <tr>
+            <td>{{req.id_requi}}</td>
+            <td><p-button label="Cotizar" (onClick)="cotizar(req.id_requi)"></p-button></td>
+            <td>{{req.id_requi}}</td>
+            <td>{{req.id_requi}}</td>
+            <td>{{req.fecha_captura}}</td>
+            <td>{{req.id_requi == 1 ? 'Captura':'0'}}</td>
+            <td>{{req.detalle}}</td>
+            <td>{{req.usuario_captura}}</td>
+            
+       
+        </tr>
+    </ng-template>
+</p-table>
+
+<p-dialog header="Cotizador" [(visible)]="cotizador">
+ <div class="card">
+{{id_requis}}
+ </div>
+</p-dialog>
